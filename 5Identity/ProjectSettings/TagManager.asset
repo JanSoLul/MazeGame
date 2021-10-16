@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Wall
   - FOW
+  - Goal
+  - Character
   layers:
   - Default
   - TransparentFX

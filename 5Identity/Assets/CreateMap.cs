@@ -8,6 +8,7 @@ public class CreateMap : MonoBehaviour
     public GameObject road_tile;
     public GameObject WOF;
     public GameObject character;
+    public GameObject goal;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class CreateMap : MonoBehaviour
             {1,1,0,1,0,0,0,0,1,0,0,0,1,0,0,0,1},
             {1,0,0,1,0,1,1,0,1,0,1,1,1,0,1,0,1},
             {1,0,1,0,0,1,0,0,1,0,0,0,1,1,1,0,1},
-            {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1}};
+            {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1}};
         for (int x=0; x<17; x++)
         {
             for (int y=0; y<17; y++)
@@ -46,6 +47,11 @@ public class CreateMap : MonoBehaviour
                     if (maze[x, y] == 2)
                     {
                         character.transform.position = new Vector3(x, y, 0);
+                    }
+                    else if (maze[x, y] == 3)
+                    {
+                        GameObject maze_goal = Instantiate(goal);
+                        maze_goal.transform.position = new Vector3(x, y, 0);
                     }
                 }
                 GameObject new_WOF = Instantiate(WOF);
